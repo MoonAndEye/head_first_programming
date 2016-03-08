@@ -1,10 +1,21 @@
 Depot:
-EA
-Description:Books
-Address:Test of Address 1
+NA
+Description:
+1st
+Address:
+Address of 1
 
 Depot:
 NA
-Description:example
-Address:DUrain
+Description:
+2nd
+Address:
+Address of 2nd
+
+Depot:
+TW
+Description:
+3rd
+Address:
+Address of 3rd
 
