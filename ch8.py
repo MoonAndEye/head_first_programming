@@ -7,19 +7,8 @@ Created on Tue Mar  8 23:08:35 2016
 
 from tkinter import *
 
-def save_data():
-    fileD = open("delieveries.txt", "a")
-    fileD.write("Depot:\n")
-    fileD.write("%s\n" % depot.get())
-    fileD.write("Description:\n")
-    fileD.write("%s\n" % description.get())
-    fileD.write("Address:\n")
-    fileD.write("%s\n" % address.get("1.0", END))
-    fileD.close
-    depot.set(None)
-    description.delete(0, END)
-    address.delete("1.0", END)
-    
+     
+        
 
 def read_depots(file):
     depots = []
@@ -33,6 +22,21 @@ app.title("Head-Ex Deliveries")
 Label(app, text = "Depot:").pack()
 #depot = Entry(app)
 #depot.pack()
+def save_data():
+    try:
+        fileD = open("delieveries.txt", "a")
+        fileD.write("Depot:\n")
+        fileD.write("%s\n" % depot.get())
+        fileD.write("Description:\n")
+        fileD.write("%s\n" % description.get())
+        fileD.write("Address:\n")
+        fileD.write("%s\n" % address.get("1.0", END))
+        fileD.close
+        depot.set(None)
+        description.delete(0, END)
+        address.delete("1.0", END)
+    except Exception as ex:
+        app.title("Cant't write to the file %s" % ex)   
 
 depot = StringVar()
 depot.set(None)
