@@ -20,6 +20,13 @@ def save_data():
     description.delete(0, END)
     address.delete("1.0", END)
     
+
+def read_depots(file):
+    depots = []
+    depots_f = open(file)
+    for each in depots_f:
+        depots.append(each.rstrip())
+    return depots
     
 app = Tk()
 app.title("Head-Ex Deliveries")
@@ -30,10 +37,13 @@ Label(app, text = "Depot:").pack()
 depot = StringVar()
 depot.set(None)
 
-
+"""
 Radiobutton(app, text = "Cambridge, MA", value = "Cambridge, MA", variable = depot).pack()
 Radiobutton(app, text = "Cambridge, UK", value = "Cambridge, UK", variable = depot).pack()
 Radiobutton(app, text = "Seattle, WA", value = "Seattle, WA", variable = depot).pack()
+"""
+options = read_depots("depots.txt")
+OptionMenu(app, depot, *options).pack()
 
 
 Label(app, text = "Description:").pack()
