@@ -7,6 +7,8 @@ Created on Wed Mar  9 22:16:43 2016
 
 from tkinter import *
 import pygame.mixer
+from tkinter.messagebox import askokcancel
+
 
 mixer = pygame.mixer
 mixer.init()
@@ -18,7 +20,9 @@ def track_stop():
     track.stop()
 
 def shutdown():
+    #if askokcancel(title = 'Are you sure?', message = 'Do you really want to quit?'):
     track.stop()
+    app.destroy()
 
 app = Tk()
 app.title('Head first Mix')
