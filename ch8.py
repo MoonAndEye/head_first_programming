@@ -6,7 +6,7 @@ Created on Tue Mar  8 23:08:35 2016
 """
 
 from tkinter import *
-
+import tkinter.messagebox
      
         
 
@@ -36,7 +36,7 @@ def save_data():
         description.delete(0, END)
         address.delete("1.0", END)
     except Exception as ex:
-        app.title("Cant't write to the file %s" % ex)   
+        tkinter.messagebox.showerror("Error", "Can't write to the file \n %s" % ex)   
 
 depot = StringVar()
 depot.set(None)
